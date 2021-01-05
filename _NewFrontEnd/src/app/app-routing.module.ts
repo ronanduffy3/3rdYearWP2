@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 // Import the routes
 
@@ -9,7 +10,7 @@ import { PlantListComponent } from './plant-list/plant-list.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'plantitems', component: PlantListComponent}
+  {path: 'plantitems', component: PlantListComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
