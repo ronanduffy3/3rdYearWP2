@@ -41,6 +41,7 @@ build/Release
 node_modules/
 jspm_packages/
 _FrontEnd/node_modules
+_NewFrontEnd/node_modules
 
 # TypeScript v1 declaration files
 typings/
