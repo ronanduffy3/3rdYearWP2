@@ -1,0 +1,21 @@
+<body>
+<div id="form">
+<h3> Update Or Delete Plant Items</h3>
+<form [formGroup]="updatePlantItem" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text" class="form-control" id="hireIdInput" placeholder="Enter Hire ID (E.g C123A)" formControlName="hireID">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="itemTitleInput" placeholder="Enter Item Title (3 Tonne Digger)" formControlName="itemtitle">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="itemDescription" placeholder="Brand, Notable Features (Yanmar, Breaker)" formControlName="itemdescription">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="yearAddedInput" placeholder="Enter Year Added (Min 1990 Max 2020)" formControlName="yearAdded">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!updatePlantItem.statusChanges">Delete</button>
+</form>
+</div>
+</body>

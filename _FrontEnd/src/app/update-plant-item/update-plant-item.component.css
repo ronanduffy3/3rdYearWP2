@@ -1,0 +1,24 @@
+.form{
+  width: 750px;
+  height: 330px;
+  background-color: #f2f2f2;
+  position: static;
+  margin-left: 800px;
+  margin-top: 20px;
+}
+form{
+  width: 750px;
+}
+.form-group{
+  width: 75%;
+  margin-left: 25px;
+
+}
+button{
+  margin-left: 25px;
+}
+h3{
+  padding-top: 10px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
