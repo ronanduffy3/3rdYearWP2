@@ -7,12 +7,14 @@ import {HttpClient, HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/ht
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserServiceService } from './user-service.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

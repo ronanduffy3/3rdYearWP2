@@ -25,6 +25,13 @@ export class PlantListComponent implements OnInit {
     yearAdded: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
+  createPlantItem = new FormGroup({
+    hireID: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    itemtitle: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    itemdescription: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    yearAdded: new FormControl('', [Validators.required, Validators.minLength(4)]),
+  });
+
   ngOnInit(): void {
 
     this.plantItemService.getPlantItems().subscribe({
@@ -35,7 +42,7 @@ export class PlantListComponent implements OnInit {
 
   }
 
-  clicked(plantItem: IPlantItem): void{
+  clicked(plantItem: IPlantItem): void {
     this.updatePlantItem.controls.hireID.setValue(plantItem.hireID);
     this.updatePlantItem.controls.itemtitle.setValue(plantItem.itemtitle);
     this.updatePlantItem.controls.itemdescription.setValue(plantItem.itemdescription);
@@ -62,6 +69,18 @@ export class PlantListComponent implements OnInit {
           error: (err) => this.message = err;
         }
       });
+    window.location.reload();
+  }
+
+  createPlant(): void {
+    this.plantItemService.addPlantItem(this.createPlantItem.value)
+    .subscribe({
+      next: plantItem => {
+        console.log(JSON.stringify(plantItem));
+        // tslint:disable-next-line:label-position
+        error: (err) => this.message = err;
+      }
+    });
     window.location.reload();
   }
 }
